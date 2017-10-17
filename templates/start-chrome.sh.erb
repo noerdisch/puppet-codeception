@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+# Run Chrome Headless
+start-chrome-headless() {
+    chromedriver --url-base=/wd/hub >/dev/null 2>&1 & echo $! > ~/chromedriver.pid
+}
+
+# Start
+# Start
+if [ -e ~/chromedriver.pid ]
+then
+    echo "Chrome is already running. When you want to start a new chrome, stop the existing first with 'stop-chrome'"
+else
+    echo "Starting new Chrome"
+    start-chrome-headless
+fi

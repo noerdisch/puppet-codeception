@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+# Kill typo3 listener process on port 8000
+stop-typo3-listener() {
+    echo "Stop TYPO3 listener with PID:" $(cat ~/typo3-listener.pid)
+    kill -9 $(cat ~/typo3-listener.pid) > /dev/null 2>&1 && rm -f ~/typo3-listener.pid
+}
+
+# Stop
+stop-typo3-listener

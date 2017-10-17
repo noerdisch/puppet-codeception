@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+# Run listener on port 8000 for TYPO3
+start-typo3-listener() {
+    php -S localhost:8000 >/dev/null 2>&1 & echo $! > ~/typo3-listener.pid
+}
+
+# Start
+if [ -e ~/typo3-listener.pid ]
+then
+    echo "TYPO3 listener is already running - wait until this listener is done or exec 'stop-typo3-listener'"
+else
+    echo "Starting new TYPO3 listener"
+    start-typo3-listener
+fi
