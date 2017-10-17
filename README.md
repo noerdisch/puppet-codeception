@@ -41,6 +41,10 @@ listener and then start a new listener from the web root of the new instance.
 I am not a DevOps guy. So be patient with me if something is done wrong and open an issue or send a PR.
 I just want to share my little helper.
 
+## Troubleshooting
+
+* The TYPO3 acceptance tests are failing and the screenshot shows only "File not found"? Then you probably have a process that uses the port 8000. Check this with ```sudo netstat -plnt``` ... when you have a process that is not php, try to stop that. Otherwise the start-typo3-listener can not start.
+
 ## Links
 
 * [Codeception](http://codeception.com/)
