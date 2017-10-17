@@ -5,6 +5,18 @@ You can also use it to test other PHP scripts with codeception.
 
 I tested this actualy only on ubuntu 16.04.
 
+## Usage
+
+Clone the repository in your modules folder.
+
+```git clone https://github.com/noerdisch/puppet-codeception.git codeception```
+
+Now you only need to include the new module to your main manifest file.
+Just use:
+
+```include codeception```
+
+
 ## Note
 
 The module comes with codeception and a chromedriver. So you are able to write acceptance tests from the beginning.
