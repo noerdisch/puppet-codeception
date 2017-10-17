@@ -28,7 +28,7 @@ class codeception {
 
   file { "/usr/local/bin/start-chrome":
     ensure          => file,
-    content         => template("noerdception/start-chrome.sh.erb"),
+    content         => template("codeception/start-chrome.sh.erb"),
     owner            => 'root',
     group            => 'root',
     mode             => '0755'
@@ -36,7 +36,7 @@ class codeception {
 
   file { "/usr/local/bin/start-typo3-listener":
     ensure          => file,
-    content         => template("noerdception/start-typo3-listener.sh.erb"),
+    content         => template("codeception/start-typo3-listener.sh.erb"),
     owner            => 'root',
     group            => 'root',
     mode             => '0755'
@@ -44,7 +44,7 @@ class codeception {
 
   file { "/usr/local/bin/stop-chrome":
     ensure          => file,
-    content         => template("noerdception/stop-chrome.sh.erb"),
+    content         => template("codeception/stop-chrome.sh.erb"),
     owner            => 'root',
     group            => 'root',
     mode             => '0755'
@@ -52,7 +52,7 @@ class codeception {
 
   file { "/usr/local/bin/stop-typo3-listener":
     ensure          => file,
-    content         => template("noerdception/stop-typo3-listener.sh.erb"),
+    content         => template("codeception/stop-typo3-listener.sh.erb"),
     owner            => 'root',
     group            => 'root',
     mode             => '0755'
