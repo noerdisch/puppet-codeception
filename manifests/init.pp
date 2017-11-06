@@ -12,14 +12,26 @@
 #   include codeception
 class codeception {
   if $::osfamily == 'Debian' {
+    exec { 'key signing chrome':
+      command => 'wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -',
+      path    => '/usr/bin:/usr/sbin',
+    }
+
+    exec { 'Add chrome to sourcelist':
+      command => 'sudo sh -c \'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list\'',
+      path    => '/usr/bin:/usr/sbin',
+    }
+
     exec { 'chrome_install':
-      command => 'sudo apt-get install google-chrome-stable',
+      command => 'sudo apt-get update && sudo apt-get install google-chrome-stable',
+      path    => '/usr/bin:/usr/sbin',
     }
   }
 
   if $::osfamily == 'Debian' {
     exec { 'chromedriver_install':
       command => 'wget https://chromedriver.storage.googleapis.com/2.33/chromedriver_linux64.zip -P ~/ && unzip ~/chromedriver_linux64.zip -d ~/ && rm ~/chromedriver_linux64.zip && sudo mv -f ~/chromedriver /usr/local/bin/chromedriver',
+      path    => '/usr/bin:/usr/sbin',
     }
     -> file {
         '/usr/local/bin/chromedriver': ensure => present, owner => 'root', group => 'root', mode => '0755',
