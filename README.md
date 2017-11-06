@@ -2,6 +2,7 @@
     <img src="https://cdn.rawgit.com/markusguenther/abe70d34f4a4621aed0ef504c5d0192b/raw/5bf0f3df328e58ba7aad067a56cbd1c15ef69491/logo_full.svg" width="300">
 </p>
 
+[![Build Status](https://travis-ci.org/noerdisch/puppet-codeception.svg?branch=master)](https://travis-ci.org/noerdisch/puppet-codeception)
 [![Puppet Forge](https://img.shields.io/puppetforge/v/noerdisch/codeception.svg?style=flat-square)](https://forge.puppet.com/noerdisch/codeception)
 [![Puppet Forge](https://img.shields.io/puppetforge/dt/noerdisch/codeception.svg?style=flat-square)](https://forge.puppet.com/noerdisch/codeception)
 [![Libraries.io for GitHub](https://img.shields.io/librariesio/github/noerdisch/puppet-codeception.svg?style=flat-square)](https://github.com/noerdisch/puppet-codeception/edit/feature/puppet-forge-module/README.md)
