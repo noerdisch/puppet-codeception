@@ -1,6 +1,6 @@
 {
   "name": "noerdisch-codeception",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "author": "Markus Günther",
   "summary": "Installing global codeception and some related tools like chromedriver.",
   "license": "MIT",
