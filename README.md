@@ -22,7 +22,7 @@ I tested this actualy only on ubuntu 16.04.
 To use this module, add this declaration to your Puppetfile:
 
 ```
-mod 'noerdisch-codeception', '0.1.1'
+mod 'noerdisch-codeception', '0.1.2'
 ```
 
 ### Manually via puppet
@@ -30,7 +30,7 @@ mod 'noerdisch-codeception', '0.1.1'
 To manually install this module with puppet module tool:
 
 ```
-puppet module install noerdisch-codeception --version 0.1.1
+puppet module install noerdisch-codeception --version 0.1.2
 ```
 
 ### Via git
@@ -56,6 +56,7 @@ you need to install the geckodriver e.g. first.
 To start the chrome we also added a script. Just enter ```chrome-start``` and you can run the codeception tests.
 The script creates a file with the pid of the chrome process. The file is located in your home folder. When your done enter ```chrome-stop``` to stop the process. The chromedriver runs on port ```9515```.
 
+The usage of chrome is at the moment only for Debian like operating systems!
 
 ## TYPO3 special
 

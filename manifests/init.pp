@@ -11,15 +11,19 @@
 # @example
 #   include codeception
 class codeception {
-  exec { 'chrome_install':
-    command => 'sudo apt-get install google-chrome-stable',
+  if $::osfamily == 'Debian' {
+    exec { 'chrome_install':
+      command => 'sudo apt-get install google-chrome-stable',
+    }
   }
 
-  exec { 'chromedriver_install':
-    command => 'wget https://chromedriver.storage.googleapis.com/2.33/chromedriver_linux64.zip -P ~/ && unzip ~/chromedriver_linux64.zip -d ~/ && rm ~/chromedriver_linux64.zip && sudo mv -f ~/chromedriver /usr/local/bin/chromedriver',
-  }
-  -> file {
-      '/usr/local/bin/chromedriver': ensure => present, owner => 'root', group => 'root', mode => '0755',
+  if $::osfamily == 'Debian' {
+    exec { 'chromedriver_install':
+      command => 'wget https://chromedriver.storage.googleapis.com/2.33/chromedriver_linux64.zip -P ~/ && unzip ~/chromedriver_linux64.zip -d ~/ && rm ~/chromedriver_linux64.zip && sudo mv -f ~/chromedriver /usr/local/bin/chromedriver',
+    }
+    -> file {
+        '/usr/local/bin/chromedriver': ensure => present, owner => 'root', group => 'root', mode => '0755',
+    }
   }
 
   exec { 'codeception_install':
@@ -30,16 +34,20 @@ class codeception {
     '/usr/local/bin/codecept': ensure => present, owner => 'root', group => 'root', mode => '0755',
   }
 
-  file {
-    '/usr/local/bin/start-chrome': ensure => file, content => template('codeception/start-chrome.sh.erb'), owner => 'root', group => 'root', mode => '0755'
+  if $::osfamily == 'Debian' {
+    file {
+      '/usr/local/bin/start-chrome': ensure => file, content => template('codeception/start-chrome.sh.erb'), owner => 'root', group => 'root', mode => '0755'
+    }
   }
 
   file {
     '/usr/local/bin/start-typo3-listener': ensure => file, content => template('codeception/start-typo3-listener.sh.erb'), owner => 'root', group => 'root', mode => '0755'
   }
 
-  file {
-    '/usr/local/bin/stop-chrome': ensure => file, content => template('codeception/stop-chrome.sh.erb'), owner => 'root', group => 'root', mode => '0755'
+  if $::osfamily == 'Debian' {
+    file {
+      '/usr/local/bin/stop-chrome': ensure => file, content => template('codeception/stop-chrome.sh.erb'), owner => 'root', group => 'root', mode => '0755'
+    }
   }
 
   file {
