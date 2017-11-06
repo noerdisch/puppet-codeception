@@ -1,5 +1,5 @@
 <p align="center">
-    <img src="https://cdn.rawgit.com/markusguenther/abe70d34f4a4621aed0ef504c5d0192b/raw/5bf0f3df328e58ba7aad067a56cbd1c15ef69491/logo_full.svg">
+    <img src="https://cdn.rawgit.com/markusguenther/abe70d34f4a4621aed0ef504c5d0192b/raw/5bf0f3df328e58ba7aad067a56cbd1c15ef69491/logo_full.svg" width="300">
 </p>
 
 [![Puppet Forge](https://img.shields.io/puppetforge/v/noerdisch/codeception.svg?style=flat-square)](https://forge.puppet.com/noerdisch/codeception)
