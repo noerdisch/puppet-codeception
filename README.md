@@ -15,7 +15,25 @@ You can also use it to test other PHP scripts with codeception.
 
 I tested this actualy only on ubuntu 16.04.
 
-## Usage
+## Install
+
+### Via puppet forge
+
+To use this module, add this declaration to your Puppetfile:
+
+```
+mod 'noerdisch-codeception', '0.1.0'
+```
+
+### Manually via puppet
+
+To manually install this module with puppet module tool:
+
+```
+puppet module install noerdisch-codeception --version 0.1.0
+```
+
+### Via git
 
 Clone the repository in your modules folder.
 
