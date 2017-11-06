@@ -12,13 +12,18 @@
 #   include codeception
 class codeception {
   if $::osfamily == 'Debian' {
-    exec { 'download chrome source':
-      command => 'wget -N https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb -P ~/',
+    exec { 'key signing chrome':
+      command => 'wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -',
       path    => '/usr/bin:/usr/sbin',
     }
 
-    exec { 'install chrome':
-      command => 'sudo dpkg -i --force-depends ~/google-chrome-stable_current_amd64.deb && sudo apt-get -f install -y',
+    exec { 'Add chrome to sourcelist':
+      command => 'sudo sh -c \'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list\'',
+      path    => '/usr/bin:/usr/sbin',
+    }
+
+    exec { 'chrome_install':
+      command => 'sudo apt-get update && sudo apt-get install google-chrome-stable',
       path    => '/usr/bin:/usr/sbin',
     }
   }
