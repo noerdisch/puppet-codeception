@@ -14,16 +14,19 @@ class codeception {
   if $::osfamily == 'Debian' {
     exec { 'download chrome source':
       command => 'wget -N https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb -P ~/',
+      path    => '/usr/bin:/usr/sbin',
     }
 
     exec { 'install chrome':
       command => 'sudo dpkg -i --force-depends ~/google-chrome-stable_current_amd64.deb && sudo apt-get -f install -y',
+      path    => '/usr/bin:/usr/sbin',
     }
   }
 
   if $::osfamily == 'Debian' {
     exec { 'chromedriver_install':
       command => 'wget https://chromedriver.storage.googleapis.com/2.33/chromedriver_linux64.zip -P ~/ && unzip ~/chromedriver_linux64.zip -d ~/ && rm ~/chromedriver_linux64.zip && sudo mv -f ~/chromedriver /usr/local/bin/chromedriver',
+      path    => '/usr/bin:/usr/sbin',
     }
     -> file {
         '/usr/local/bin/chromedriver': ensure => present, owner => 'root', group => 'root', mode => '0755',
