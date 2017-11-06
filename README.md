@@ -23,7 +23,7 @@ I tested this actualy only on ubuntu 16.04.
 To use this module, add this declaration to your Puppetfile:
 
 ```
-mod 'noerdisch-codeception', '0.1.4'
+mod 'noerdisch-codeception', '0.1.5'
 ```
 
 ### Manually via puppet
@@ -31,7 +31,7 @@ mod 'noerdisch-codeception', '0.1.4'
 To manually install this module with puppet module tool:
 
 ```
-puppet module install noerdisch-codeception --version 0.1.4
+puppet module install noerdisch-codeception --version 0.1.5
 ```
 
 ### Via git
