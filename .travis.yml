@@ -35,9 +35,9 @@ notifications:
   email: false
 deploy:
   provider: puppetforge
-  user: puppet
+  user: noerdisch
   password:
-    secure: ""
+    secure: "PkoBu3350FfZF67aKgR2ua59xAAwRb+2lERzpseoa4+9fWItP8UVCxxA269+6HZ/1ltPE/5AYqbE7oiJaCF8SnVFOmP8sfVG2n1roZXDrPaOPBRYzAkXgH4Dk6ZWdEX5y3i//ocv/6j932BS58amSoOyC/EO5GveY2elZ+bZeS1ICe1AG5HRIYGDQbVyStWH+UD8tlRJ8f1bLj+nnPTS7RRQfu/jD+t6Ux5nsZxXI6HNK2i9yCZdVNVbhvrc9KzGpw93lkABh2VYcZ65Oz/HwtY9oQX7w5DR7zKUwFjK0N7D39154pZTZpsTXc5wa1RDYPqVZzXmuj706FF3z3Cqt0JC5lrmodEJNhG7QantgS0aqxrMzaXWg/erxDbjN4cTnxgiYCVFlZIWmA9aLCrI3g6zwTdAovsNYYTw81EA7f/8Pap8obFurADYRO06jRsq9gHhSnzS+199dYaOWC77hLtEXZBftex2QiGyErQFgzGlBldyJeAaW1HaB/wmvPuYXalEDYKWTuhatynnjykD77ZoyF/+CRjatOPfjI9oHVOQC/5sZetojGNUTn61+NHtMWqhaVqE7Xw3cRhBm1pYSQGcI5DoKajF3XWQqots3UV9sYz2Zo0BbK14w9PDMsey2h0quS2F3cp+fWHSGutT9Pg4NcxgyFKKVn6kHPs8Hgw="
   on:
     tags: true
     all_branches: true
