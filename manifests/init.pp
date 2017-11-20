@@ -65,4 +65,14 @@ class codeception {
   file {
     '/usr/local/bin/stop-typo3-listener': ensure => file, content => template('codeception/stop-typo3-listener.sh.erb'), owner => 'root', group => 'root', mode => '0755'
   }
+
+  exec { 'Cleanup chrome process':
+    command => 'sudo rm ~/chromedriver.pid',
+    path    => '/usr/bin:/usr/sbin',
+  }
+
+  exec { 'Cleanup typo3 listener process':
+    command => 'sudo rm ~/typo3-listener.pid',
+    path    => '/usr/bin:/usr/sbin',
+  }
 }
