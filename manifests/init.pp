@@ -23,8 +23,9 @@ class codeception {
     }
 
     exec { 'chrome_install':
-      command => 'sudo apt-get update && sudo apt-get install google-chrome-stable',
+      command => 'sudo apt-get update && sudo apt-get install google-chrome-stable -y',
       path    => '/usr/bin:/usr/sbin',
+      require => Exec['Add chrome to sourcelist'],
     }
   }
 
